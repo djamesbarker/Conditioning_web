@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.link {
+    font-size: 15px;
+}
+
+footer {
+    padding-left: 120px;
+}
+
+img {
+    width: 400px;
+}
+
+body {
+    font-size: 18px;
+}
+
+.code {
+    background-color: #CAE1FF;
+}
+
+.main {
+    padding: 30px;
+    background-color: #EED5B7;
+    width: 80%;
+}
+
+h2{
+    color: #8B6508;
+}
+
+h1{
+    color: #8B1A1A;
+}

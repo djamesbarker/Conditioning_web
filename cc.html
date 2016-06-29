@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Arduino for rat</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Arduino for rat</a>
+                <a class="navbar-brand" href="cc.html">Classical conditioning</a>
+                <a class="navbar-brand" href="fix.html">Fixed ratio</a>
+                <a class="navbar-brand" href="p.html">Progressive ratio</a>
+                <a class="navbar-brand" href="v.html">Variable ratio</a>
+                <a class="navbar-brand" href="sd.html">Discriminative stimuli</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            </div>
+        </div>
+    </nav>
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Classical conditioning</h1>
+            </div>
+        </div>
+        <h2>Introduction</h2>
+        <p>Classical conditioning is a learning process in which an innate response to a potent stimulus comes to be elicited in response to a previously neutral stimulus; this is achieved by repeated pairings of the neutral stimulus with the potent stimulus. </p>
+        <p>This conditioning method contains three mode:</p>
+        <p>a) Forward: conditioned stimulus – CS and unconditioned stimulus -- US are presented following time sequence entered by user;</p>
+        <p>b) Temporal: US is presented frequently every time interval entered by user;</p>
+        <p>c) Blocking: assume that the conditioning has already been developed for the first conditioned stimulus -- CS1, under this mode, CS1 and another stimulus -- CS2 are presented together following time sequence entered by user.</p>
+        <img src="img/theory_cc.jpg" alt="Classical conditioning">
+        <h2>Hardware requirement</h2>
+        <ul>
+            <li>Arduino Uno * 1 ---- Main controlling board</li>
+            <li>LED * 2 ---- Both acted as conditioned stimulus</li>
+            <li>Servo * 1 ---- Assuming it control the robotic arm to deliver and remove US</li>
+            <li>Resistor 560 Ohm * 2 ---- 560 Ohm to connect LED’s negative leg to ground</li>
+            <li>Wires ---- Connect components with Arduino board</li>
+        </ul>
+        <h2>Circuit Connection</h2>
+        <img src="img/circuit_cc.jpg" alt="Circuit Connection">
+        <h2>Flow Diagram</h2>
+        <img src="img/diagram_cc.jpg" alt="Diagram">
+        <h2>Interface Instruction</h2>
+        <img src="img/interface_cc.jpg" alt="interface">
+        <p></p>
+        <br>
+        <p>How to use the interface</p>
+        <p>a) If user need to do the pre-test of hardware, check the box of PRE-TEST MODE without any other entry</p>
+        <p>b) If user need to implement the experiment and load previous configuration, check the box of load-config?. In this case, user do not need to enter any parameter below; Otherwise, user can enter new parameters and these will be saved into the file automatically.</p>
+        <p>c) Parameters</p>
+        <p>Trial: the number of times user want the procedure of classical conditioning to repeat</p>
+        <p>CS duration: the time of presenting CS to the rat</p>
+        <p>US duration: the time of presenting US to the rat</p>
+        <p>Interval between cs and us: the time sequence of presenting CS and US to the rat, and negative input means US will be presented before CS ends</p>
+        <p>Intertrial interval: the time needed to wait before starting a new trail, which can be selected as random, in which case the program will automatically selected an interval for each trail. If blocking mode is chosen, only this entry is regarded as siginificative.</p>
+        <p>Conditioned stimulus: user can choose which LED to be used as CS. In the mode of blocking, however, two LEDs will automatically be turned on regardless this choice</p>
+        <p>Conditioning mode: choose the mode of conditioning.</p>
+        <p>(Above entries will be saved into the configuration file)</p>
+        <p>d) Press start to execute the experiment, and during this process, user can terminate the experiment at any time by pressing the exit button.</p>
+        <h2>Software interpretation</h2>
+        <p><a href="https://github.com/zsha2/Conditioning/blob/master/cc.py">Here</a>'s the link for the code</p>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

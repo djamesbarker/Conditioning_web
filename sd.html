@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Arduino for rat</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Arduino for rat</a>
+                <a class="navbar-brand" href="cc.html">Classical conditioning</a>
+                <a class="navbar-brand" href="fix.html">Fixed ratio</a>
+                <a class="navbar-brand" href="p.html">Progressive ratio</a>
+                <a class="navbar-brand" href="v.html">Variable ratio</a>
+                <a class="navbar-brand" href="sd.html">Discriminative stimuli</a>            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            </div>
+        </div>
+    </nav>
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Discriminative stimuli</h1>
+            </div>
+        </div>
+        <h2>Introduction</h2>
+        <p>SD stands for discriminative stimulus which acts as the necessity of achievement of the criterion. It means that only when the discriminative stimulus is presented to the rat, and the rat achieves the criterion (in this project, is to press the button for required times.), food will be rewarded. If SD is not presented, no matter whether the rat presses the button, the action will not lead to reward.</p>
+        <img src="img/theory_sd.jpg" alt="Discriminative stimuli">
+        <h2>Hardware Required</h2>
+        <ul>
+            <li>Arduino Uno * 1 ---- Main controlling board</li>
+            <li>Button * 1 ---- The number of presses be regarded as criterion</li>
+            <li>LED * 1 ---- Indication of the presses that lead to reward</li>
+            <li>Servo * 1 ---- Assuming it control the robotic arm to deliver and remove US</li>
+            <li>Resistor 560 Ohm * 1 ---- 560 Ohm to connect LED’s negative leg to ground</li>
+            <li>Resistor 10k Ohm * 1 ---- 10k Ohm to connect button to ground</li>
+            <li>Wires ---- Connect components with Arduino board</li>
+        </ul>
+        <h2>Circuit Connection</h2>
+        <img src="img/circuit_sd.jpg" alt="Circuit Connection">
+        <h2>Flow Diagram</h2>
+        <img src="img/diagram_sd.jpg" alt="Diagram">
+        <h2>Interface Instruction</h2>
+        <img src="img/interface_sd.jpg" alt="interface">
+        <p></p>
+        <br>
+        <p>How to use the interface</p>
+        <p>a) If user need to do the pre-test of hardware, check the box of PRE-TEST MODE without any other entry</p>
+        <p>b) If user need to implement the experiment and load previous configuration, check the box of load-config?. In this case, user do not need to enter any parameter below; Otherwise, user can enter new parameters and these will be saved into the file automatically.</p>
+        <p>c) Parameters</p>
+        <p>Criterion: the number of presses that the rat need to complete to get reward</p>
+        <p>Interval: the time needed to between achieving the criterion and delivering the food</p>
+        <p>Duration: the time that the reward is presented to the rat</p>
+        <p>SD Duration: the time that the discriminative stimulus will last for</p>
+        <p>Intertrial interval: the time that need to delay before starting a new trial</p>
+        <p>(Above entries will be saved into the configuration file)</p>
+        <p>d) Press start to execute the experiment, and during this process, user can terminate the experiment at any time by pressing the exit button.</p>
+        <h2>Software interpretation</h2>
+        <p><a href="https://github.com/zsha2/Conditioning/blob/master/SD.py">Here</a>'s the link for the code</p>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
